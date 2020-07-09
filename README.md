@@ -1,5 +1,7 @@
 # lNoob
 
+EM CONSTRUÇÃO
+
 Aplicativo em Bash Script para configurar Linux Mint 20
 
 O pacote vai gerenciar scripts para instalar e/ou fazer configurações no Mint, a partir de escolha via menu.

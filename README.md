@@ -8,3 +8,5 @@ Quem tiver scripts que estejam funcionando podem enviar para elo.edson@gmail.com
     
 Assim que estiver operacional, enformo o email definitivo do projeto.
 Este final de semana começo a upar as partes já prontas.
+
+Edson Oliveira

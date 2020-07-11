@@ -1,5 +1,8 @@
 # lNoob
 
+![Logotipo](https://github.com/EdsonOliveira/lNoob/blob/master/lNoob.png)
+![Logotipo](https://github.com/EdsonOliveira/lNoob/blob/master/EmConstrucao.jpg)
+
 EM CONSTRUÇÃO
 
 Aplicativo em Bash Script para configurar Linux Mint 20

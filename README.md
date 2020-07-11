@@ -1,5 +1,4 @@
-![lNoob](https://github.com/EdsonOliveira/lNoob/blob/master/lNoob.png)
-# lNoob
+# lNoob ![lNoob](https://github.com/EdsonOliveira/lNoob/blob/master/Mascote.png)
 
 Aplicativo em Bash Script para configurar Linux Mint 20
 
@@ -11,5 +10,6 @@ Assim que estiver operacional, enformo o email definitivo do projeto.
 Este final de semana começo a upar as partes já prontas.
 
 Edson Oliveira
+![lNoob](https://github.com/EdsonOliveira/lNoob/blob/master/lNoob.png)
 
 ![lNoob](https://github.com/EdsonOliveira/lNoob/blob/master/EmConstrucao.png)

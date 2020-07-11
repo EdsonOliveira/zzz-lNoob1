@@ -1,4 +1,5 @@
-Hi!
+DESCRIPTION
+===========
 
 This program, lNoob, allow to new users and busy people to install apps, by one click.
 

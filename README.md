@@ -1,6 +1,5 @@
-# lNoob
-
 ![lNoob](https://github.com/EdsonOliveira/lNoob/blob/master/lNoob.png)
+# lNoob
 
 Aplicativo em Bash Script para configurar Linux Mint 20
 

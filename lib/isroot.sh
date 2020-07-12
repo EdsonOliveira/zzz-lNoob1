@@ -1,4 +1,5 @@
 # Edson | Verifica se é usuário Root
+# none -> 0=yes 1=no
 isRoot ()
 {
     if [ "$(whoami)" = "root" ]; then

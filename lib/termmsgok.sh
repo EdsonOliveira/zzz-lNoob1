@@ -1,4 +1,5 @@
 # Edson | Mensagem para terminal
-msgTermOk() {
+# msg
+termMsgOk() {
 	echo -e "\n\t$1\t[    \e[32mOK\e[m    ]\n"
 }

@@ -1,45 +1,44 @@
 #!/bin/bash
-
+#
+# Based in algorithim of project [ easyLife Vers.4.6 by duli ]
 #    easyLife - Automated software install and configuration for Fedora.
 #    Copyright (C) 2017  Luis Felipe B. Marzagão (duli)
 #
-#    This program is free software: you can redistribute it and/or modify
-#    it under the terms of the GNU General Public License as published by
-#    the Free Software Foundation, either version 3 of the License, or
-#    (at your option) any later version.
+# This version is the project [ lNoob Vers.20.04.a by ELO-Edson ]
+#    Copyright (C) 2020  Edson Leonel de Oliveira (ELO)
 #
-#    This program is distributed in the hope that it will be useful,
-#    but WITHOUT ANY WARRANTY; without even the implied warranty of
-#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-#    GNU General Public License for more details.
+#	lNoob is a free software to redistribute, modify and rewrite without
+#   lost the history of producers. I put it under the terms of the
+#   GNU General Public License as published by the Free Software Foundation,
+#   either version 3 of the License, or (at your option) any later version.
+#   (can see more in COPYRIGHT file)
+#   A oroginal copyright can be found, see <http://www.gnu.org/licenses/>.
 #
-#    You should have received a copy of the GNU General Public License
-#    along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-# Define some variables
-VERSION="4.6"
+# Define variables to [ en ]
+VERSION="20.04.a"
 LOGFILE="/var/log/easylife.log"
 
-echo -e "\neasyLife  Copyright (C) 2007-2017 Luis Felipe Bretas Marzagao (Duli)"
+echo -e '███╗ ███╗   ██╗'
+echo -e ' ██║ ████╗  ██║ ██████╗  ██████╗ ██╗'
+echo -e ' ██║ ██╔██╗ ██║██║   ██║██║   ██║██████╗'
+echo -e ' ██║ ██║╚██╗██║██║   ██║██║   ██║██   ██╗'
+echo -e ' ███╗██║ ╚████║╚██████╔╝╚██████╔╝██████╔╝'
+echo -e ''
+echo -e "\nlNoob - Copyright (C) 2020  Edson Leonel de Oliveira (ELO)"
 echo -e "Version: $VERSION"
 echo -e "\nThis program comes with ABSOLUTELY NO WARRANTY."
-echo -e "This is free software, and you are welcome to redistribute it"
-echo -e "under certain conditions; read the file LICENSE for details.\n"
-echo -e "\n"
-echo -e "PLEASE, UPDATE AND REBOOT YOUR SYSTEM BEFORE RUNNING EASYLIFE.\n"
+echo -e "lNoob is free software, and you are welcome to redistribute it"
+echo -e "under conditions in the file LICENSE for details.\n"
 echo -e "\n"
 
-# Discover easylife installation folder
+# Discover easylife installation folder and actual to return
 export RUNDIR=$(dirname "$0")
-
-
-# Change to installation folder in order to correctly source files
+export EXITDIR="$pwd"
 cd "$RUNDIR"
 
-
-# Discover local language and source the respective lang file if present
-EL_LANG="${LANG%%.*}"
-EL_LANG="${EL_LANG:-en_US}"
+# define language default ro en_US if not exist translate to default language
+defLang="${LANG%%.*}"
+defLang="${defLang:-en_US}"
 [[ -f lang/"${EL_LANG}.sh" ]] && source lang/"${EL_LANG}.sh" ||	source lang/en_US.sh
 
 

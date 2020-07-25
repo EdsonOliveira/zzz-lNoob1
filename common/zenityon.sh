@@ -1,3 +1,8 @@
+# lNoob function test to app zenity
+#
+# if not, install ou print message error ( with return = 0)
+# return [ zenityOK ] = 0 . not installed   = 1 . installed
+
 zenityOn() {
 
 zzzTemp="zenity"
@@ -25,27 +30,19 @@ for PROGRAM in "$zzzTemp"; do
 done
 if [ $zzzFile eq $zzzFile1 ]; then
     zenityOK=1
+ #	termMsgOk "zenity installed"
+ 	return 0
 else
     zenityOK=0
+ 	echo -e "\nInstalling zenity...\n"
+ 	sudo apt install -y zenity
+	if [[ "$?" != 0 ]]; then
+		ErrMsg "Could not install zenity"
+		return 1
+    else
+     	termMsgOk "zenity installed"
+        return 0
+    fi
 fi
 
-
-
-# if [ $zzzFile eq $zzzFile1 ];
-# then
-# echo "o que = $zzzFile para qual = $zzzFile1"
-# 		echo -e "\nInstalling zenity...\n"
-# 		#	sudo apt install -y zenity
-# 		#	if [[ "$?" != 0 ]]; then
-# 		#		ErrMsg "Could not install zenity"
-# 		#		return 1
-# 		#	elif [[ "$?" == 0 ]]; then
-# 		# fi
-#  else
-# 	OkMsg "zenity installed"
-# 	return 0
-# fi
-
 }
-zenityOn
-echo $zenityOK

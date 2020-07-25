@@ -50,7 +50,7 @@ defLang="${defLang:-en_US}"
 for src in lib/*.sh; do source "$src"; done
 
 # Make sure zenity, if not, call to install
-#ZenityOn || Terminate
+ZenityOn || Terminate
 
 
 # Change zenity's default behavior on focus_on_map property, so dialog boxes appear in the front

@@ -4,19 +4,22 @@
 #    easyLife - Automated software install and configuration for Fedora.
 #    Copyright (C) 2017  Luis Felipe B. Marzagão (duli)
 #
-# This version is the project [ lNoob Vers.20.04.a by ELO-Edson ]
+# This pkgVersion is the project [ lNoob Vers.20.04.a by ELO-Edson ]
 #    Copyright (C) 2020  Edson Leonel de Oliveira (ELO)
 #
 #	lNoob is a free software to redistribute, modify and rewrite without
 #   lost the history of producers. I put it under the terms of the
 #   GNU General Public License as published by the Free Software Foundation,
-#   either version 3 of the License, or (at your option) any later version.
+#   either pkgVersion 3 of the License, or (at your option) any later pkgVersion.
 #   (can see more in COPYRIGHT file)
 #   A oroginal copyright can be found, see <http://www.gnu.org/licenses/>.
 #
-# Define variables to [ en ]
-VERSION="20.04.a"
-LOGFILE="/var/log/easylife.log"
+# Dependences
+#	zenity
+#
+# Starting configuration
+pkgVersion="20.04.a"
+logFile="/var/log/easylife.log"
 
 echo -e '███╗ ███╗   ██╗'
 echo -e ' ██║ ████╗  ██║ ██████╗  ██████╗ ██╗'
@@ -25,7 +28,7 @@ echo -e ' ██║ ██║╚██╗██║██║   ██║██║
 echo -e ' ███╗██║ ╚████║╚██████╔╝╚██████╔╝██████╔╝'
 echo -e ''
 echo -e "\nlNoob - Copyright (C) 2020  Edson Leonel de Oliveira (ELO)"
-echo -e "Version: $VERSION"
+echo -e "pkgVersion: $pkgVersion"
 echo -e "\nThis program comes with ABSOLUTELY NO WARRANTY."
 echo -e "lNoob is free software, and you are welcome to redistribute it"
 echo -e "under conditions in the file LICENSE for details.\n"
@@ -36,19 +39,17 @@ export RUNDIR=$(dirname "$0")
 export EXITDIR="$pwd"
 cd "$RUNDIR"
 
-# define language default ro en_US if not exist translate to default language
+# define language default to en_US if not default language system
 defLang="${LANG%%.*}"
 defLang="${defLang:-en_US}"
-[[ -f lang/"${EL_LANG}.sh" ]] && source lang/"${EL_LANG}.sh" ||	source lang/en_US.sh
 
+# Charge defined language variables
+[[ -f lang/"${defLang}.sh" ]] && source lang/"${defLang}.sh" ||	source lang/en_US.sh
 
-# Source all scripts, functions etc.
-for src in lib/common/*.sh; do source "$src"; done
-
+# Charge all system scripts and funcions
 for src in lib/*.sh; do source "$src"; done
 
-
-# Make sure zenity is installed (not really necessary if zenity is listed as required at SPEC file)
+# Make sure zenity, if not, call to install
 #ZenityOn || Terminate
 
 
@@ -101,10 +102,11 @@ GetDlUrls || Terminate
 
 
 # Run selected functions and log them to a logfile
-# TODO: Implement "logger -p local0.info -f $LOGFILE -t info "Msg here..."
+# TODO: Implement "logger -p local0.info -f $logFile -t info "Msg here..."
 for GO in ${FUNCTIONS[@]}; do
-	#echo -e "\n$(date +%c) - easyLife version: $VERSION\n" | tee -a "$LOGFILE"
-	#"$GO" | tee -a "$LOGFILE"
+	#echo -e "\n$(date +%c) - easyLife pkgVersion: 
+	pkgVersion\n" | tee -a "$logFile"
+	#"$GO" | tee -a "$logFile"
 	"$GO"
 done
 
